@@ -1,4 +1,4 @@
-<form method="post" action="add_update.php">
+<form method="post" action="table_data.php">
 
     <h1>Cadastra Usuário:</h1>
 
