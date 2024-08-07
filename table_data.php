@@ -1,6 +1,12 @@
 <?php 
 require 'setting.php';
 
+$lista = [];
+$sql = $pdo->query("SELECT * FROM cadastrolojas");
+
+if($sql->rowCount() > 0){
+  $lista = $sql->fetchAll(PDO::FETCH_ASSOC);
+}
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +22,7 @@ require 'setting.php';
     <h1>Bem vindo a DropVision</h1>
 
     <table class="table table-dark .table-group-divider">
-  <thead>
+  
     <tr>
       <th scope="col">#</th>
       <th scope="col">Nome da Loja</th>
@@ -24,16 +30,22 @@ require 'setting.php';
       <th scope="col">Loja Ninchada</th>
       <th scope="col">Opções</th>
     </tr>
-  </thead>
-  <tbody>
-    
-  </tbody>
+
+    <?php foreach($lista as $usuario):?>
+ 
+      <tr>
+        <td><?=$usuario['id'];?></td>
+        <td><?=$usuario['nomeDaLoja'];?></td>
+        <td><?=$usuario['linkDaLoja'];?></td>
+        <td><?=$usuario['lojaNichada'];?></td>
+      </tr>
+
+      <?php endforeach; ?>
 </table>
 
 <!-- <button type="button" class="btn btn-primary" >Cadastra Loja</button> -->
     <a href="product_registration.php">Cadastra Loja</a>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </body>
 </html>
