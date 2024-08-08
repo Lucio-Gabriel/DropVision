@@ -41,7 +41,7 @@ if($sql->rowCount() > 0){
         <td><?=$usuario['lojaNichada'];?></td>
         <td>
             <a class="btnUpdate" href="edit.php?id=<?=$usuario['id'];?>">Editar</a>
-            <a class="btnUpdate" href="edit.php">Apagar</a>
+            <a class="btnUpdate" href="delete.php?id=<?=$usuario['id'];?>:" onclick="return confirm('Tem certeza que deseja deletar?')">Apagar</a>
         </td>
       </tr>
       <?php endforeach; ?>
