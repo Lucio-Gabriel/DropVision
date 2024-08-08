@@ -16,6 +16,7 @@ if($sql->rowCount() > 0){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="StyleComponets/stylebtn.css">
 </head>
 <body>
     
@@ -38,13 +39,16 @@ if($sql->rowCount() > 0){
         <td><?=$usuario['nomeDaLoja'];?></td>
         <td><?=$usuario['linkDaLoja'];?></td>
         <td><?=$usuario['lojaNichada'];?></td>
+        <td>
+            <a class="btnUpdate" href="edit.php?id=<?=$usuario['id'];?>">Editar</a>
+            <a class="btnUpdate" href="edit.php">Apagar</a>
+        </td>
       </tr>
-
       <?php endforeach; ?>
 </table>
 
 <!-- <button type="button" class="btn btn-primary" >Cadastra Loja</button> -->
-    <a href="product_registration.php">Cadastra Loja</a>
+    <a class="btnUpdate" href="product_registration.php">Cadastra Loja</a>
 
 
 </body>
